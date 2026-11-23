@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- ปุ่มสลับโหมดมืด/สว่าง -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="สลับโหมดมืด/สว่าง">
+      <span class="theme-icon">🌙</span>
+      <span class="theme-text">โหมดมืด</span>
+    </button>
+
     <header>
       <div class="container">
         <h1>My Developer Portfolio</h1>
@@ -51,19 +57,95 @@
 
       <section id="projects" class="card">
         <h2>ผลงาน (Projects)</h2>
-        <div class="project-item">
-          <h3>1. เว็บไซต์แนะนำตัวเอง (My Developer Profile)</h3>
-          <p>
-            เว็บไซต์แนะนำข้อมูลส่วนตัว คติประจำใจ และปุ่มทักทายแบบโต้ตอบได้
-            พัฒนาด้วย HTML, CSS และ JavaScript ผ่านโปรแกรม Visual Studio Code
-          </p>
+
+        <!-- ปุ่มเลือกหมวดหมู่ผลงาน -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">ทั้งหมด (All)</button>
+          <button class="filter-btn" data-filter="html-css">HTML &amp; CSS</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
         </div>
-        <div class="project-item">
-          <h3>2. เว็บไซต์พอร์ตโฟลิโอนักพัฒนา (My Developer Portfolio)</h3>
-          <p>
-            เว็บไซต์รวบรวมประวัติส่วนตัว ทักษะ และผลงาน จัดแบ่งโครงสร้างเนื้อหาด้วย Semantic HTML
-            พร้อมระบบเมนูนำทางเชื่อมไปยังส่วนต่าง ๆ ของหน้าเว็บ
-          </p>
+
+        <div class="projects-grid">
+          <!-- ผลงานชิ้นที่ 1 -->
+          <div class="project-item" data-category="javascript">
+            <div class="project-thumb" role="button" tabindex="0" aria-label="ดูรายละเอียดผลงาน เว็บไซต์แนะนำตัวเอง">
+              <div class="thumb-browser-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="browser-title">my-profile.html</span>
+              </div>
+              <div class="thumb-content">
+                <span class="thumb-icon">👤</span>
+                <p class="thumb-preview-title">My Developer Profile</p>
+                <span class="thumb-tag">Interactive JS</span>
+              </div>
+              <div class="thumb-overlay">
+                <span>🔍 คลิกดูรายละเอียด</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>1. เว็บไซต์แนะนำตัวเอง (My Developer Profile)</h3>
+              <p>
+                เว็บไซต์แนะนำข้อมูลส่วนตัว คติประจำใจ และปุ่มทักทายแบบโต้ตอบได้
+                พัฒนาด้วย HTML, CSS และ JavaScript ผ่านโปรแกรม Visual Studio Code
+              </p>
+            </div>
+          </div>
+
+          <!-- ผลงานชิ้นที่ 2 -->
+          <div class="project-item" data-category="html-css">
+            <div class="project-thumb" role="button" tabindex="0" aria-label="ดูรายละเอียดผลงาน เว็บไซต์พอร์ตโฟลิโอนักพัฒนา">
+              <div class="thumb-browser-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="browser-title">portfolio.html</span>
+              </div>
+              <div class="thumb-content">
+                <span class="thumb-icon">💼</span>
+                <p class="thumb-preview-title">My Developer Portfolio</p>
+                <span class="thumb-tag">Semantic HTML</span>
+              </div>
+              <div class="thumb-overlay">
+                <span>🔍 คลิกดูรายละเอียด</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>2. เว็บไซต์พอร์ตโฟลิโอนักพัฒนา (My Developer Portfolio)</h3>
+              <p>
+                เว็บไซต์รวบรวมประวัติส่วนตัว ทักษะ และผลงาน จัดแบ่งโครงสร้างเนื้อหาด้วย Semantic HTML
+                พร้อมระบบเมนูนำทางเชื่อมไปยังส่วนต่าง ๆ ของหน้าเว็บ
+              </p>
+            </div>
+          </div>
+
+          <!-- ผลงานชิ้นที่ 3 (เสริมเพื่อความหลากหลายในการกรอง) -->
+          <div class="project-item" data-category="javascript">
+            <div class="project-thumb" role="button" tabindex="0" aria-label="ดูรายละเอียดผลงาน ระบบสลับโหมด Dark/Light Mode">
+              <div class="thumb-browser-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="browser-title">theme-switcher.js</span>
+              </div>
+              <div class="thumb-content">
+                <span class="thumb-icon">🌓</span>
+                <p class="thumb-preview-title">Dark / Light Mode System</p>
+                <span class="thumb-tag">DOM &amp; LocalStorage</span>
+              </div>
+              <div class="thumb-overlay">
+                <span>🔍 คลิกดูรายละเอียด</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>3. ระบบสลับธีม Dark / Light Mode</h3>
+              <p>
+                ระบบสลับโหมดการแสดงผลหน้าเว็บกลางวัน-กลางคืน พร้อมบันทึกสถานะลงใน LocalStorage
+                พัฒนาด้วย Modern CSS Variables และ Vanilla JavaScript
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -71,5 +153,33 @@
     <footer>
       <p>&copy; 2026 วีรพงศ์ อินทร์เชื้อ (68219010028) | My Developer Portfolio</p>
     </footer>
+
+    <!-- หน้าต่างป๊อปอัปรายละเอียดผลงาน (Modal) -->
+    <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-box">
+        <button class="modal-close-btn" aria-label="ปิดหน้าต่าง">&times;</button>
+        <div class="modal-header-preview" id="modal-preview"></div>
+        <div class="modal-content">
+          <div class="modal-badge-group">
+            <span id="modal-category" class="modal-badge"></span>
+          </div>
+          <h3 id="modal-title"></h3>
+          <p id="modal-description" class="modal-desc"></p>
+          
+          <div class="modal-details-section">
+            <h4>🛠️ เทคโนโลยีที่ใช้ (Tech Stack)</h4>
+            <div id="modal-tech" class="modal-tech-list"></div>
+          </div>
+
+          <div class="modal-details-section">
+            <h4>✨ จุดเด่นและสิ่งที่ได้เรียนรู้ (Highlights)</h4>
+            <ul id="modal-highlights" class="modal-highlight-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
